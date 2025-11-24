@@ -1,19 +1,12 @@
-import "../styles/globals.css";
-import "../styles/layout.css";
-
 export const metadata = {
   title: "Zihin.Live",
-  description: "AI ile güçlendirilmiş bilinç deneyimi.",
+  description: "AI ile konuşmanı canlı yayınla.",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html lang="tr">
-      <body>
-        <main className="main-container">
-          {children}
-        </main>
-      </body>
+      <body>{children}</body>
     </html>
   );
 }
