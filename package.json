@@ -1,81 +1,16 @@
-"use client";
-
-import { useState } from "react";
-
-export default function Home() {
-  const [message, setMessage] = useState("");
-  const [ai, setAi] = useState("grok");
-  const [visibility, setVisibility] = useState("link-only");
-
-  const sendMessage = async () => {
-    if (!message.trim()) {
-      alert("Lütfen bir mesaj yaz!");
-      return;
-    }
-
-    const broadcastLink = `https://zihin-live.vercel.app/watch/${Math.random().toString(36).substring(7)}`;
-
-    alert(
-      `YAYIN BAŞLADI! \n\n` +
-      `Seçtiğin AI: ${ai.toUpperCase()}\n` +
-      `Yayın tipi: ${visibility === "public" ? "Herkese Açık" : visibility === "link-only" ? "Sadece Link Olanlar" : "Özel"}\n\n` +
-      `İzleyiciler seni şu linkten izleyebilir:\n${broadcastLink}\n\n` +
-      `(Yarın gerçek AI konuşması ve izleyici ekranı eklenecek!)`
-    );
-
-    console.log("Yeni yayın:", { message, ai, visibility, broadcastLink });
-  };
-
-  return (
-    <div style={{ padding: "30px", fontFamily: "Arial, sans-serif", maxWidth: "600px", margin: "0 auto" }}>
-      <h1 style={{ fontSize: "28px", color: "#4f46e5" }}>Zihin.Live</h1>
-      <h2 style={{ fontSize: "20px", color: "#1f2937", marginBottom: "30px" }}>
-        AI Konuşmanı Canlı Yayınla
-      </h2>
-
-      <div style={{ marginBottom: "15px" }}>
-        <label style={{ display: "block", marginBottom: "8px", fontWeight: "bold" }}>
-          Hangi AI ile konuşacaksın?
-        </label>
-        <select value={ai} onChange={(e) => setAi(e.target.value)} style={{ width: "100%", padding: "10px", fontSize: "16px", borderRadius: "8px", border: "1px solid #ccc" }}>
-          <option value="grok">Grok (xAI)</option>
-          <option value="claude">Claude (Anthropic)</option>
-          <option value="gemini">Gemini (Google)</option>
-        </select>
-      </div>
-
-      <div style={{ marginBottom: "15px" }}>
-        <label style={{ display: "block", marginBottom: "8px", fontWeight: "bold" }}>
-          Ne konuşacaksın?
-        </label>
-        <input
-          type="text"
-          value={message}
-          onChange={(e) => setMessage(e.target.value)}
-          placeholder="Yeni bir sohbeti oluşturalım..."
-          style={{ width: "100%", padding: "12px", fontSize: "16px", borderRadius: "8px", border: "1px solid #ccc", boxSizing: "border-box" }}
-        />
-      </div>
-
-      <div style={{ marginBottom: "20px" }}>
-        <label style={{ display: "block", marginBottom: "8px", fontWeight: "bold" }}>
-          Kimler izleyebilecek?
-        </label>
-        <select value={visibility} onChange={(e) => setVisibility(e.target.value)} style={{ width: "100%", padding: "10px", fontSize: "16px", borderRadius: "8px", border: "1px solid #ccc" }}>
-          <option value="public">Herkese Açık</option>
-          <option value="link-only">Sadece Link Olanlar (önerilen)</option>
-          <option value="private">Özel (davetli)</option>
-        </select>
-      </div>
-
-      <button onClick={sendMessage} style={{ width: "100%", padding: "14px", backgroundColor: "#4f46e5", color: "white", fontSize: "18px", fontWeight: "bold", border: "none", borderRadius: "10px", cursor: "pointer" }}>
-        Gönder & Yayınla
-      </button>
-
-      <p style={{ marginTop: "30px", fontSize: "14px", color: "#6b7280" }}>
-        v0.1 — 24 Kasım 2025, saat 22:20’de doğdu.<br />
-        Yarın gerçek AI konuşması + izleyici ekranı geliyor.
-      </p>
-    </div>
-  );
+{
+  "name": "zihin-live",
+  "version": "1.0.0",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "next": "14.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "pusher-js": "^8.0.0",
+    "@anthropic-ai/sdk": "^0.70.0"
+  }
 }
