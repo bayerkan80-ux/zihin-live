@@ -1,3 +1,75 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+/* ---- GLOBAL LAYOUT FIX ---- */
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  background: #fafafa;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/* Sayfa kapsayıcı */
+.page-container {
+  width: 100%;
+  max-width: 620px;    /* iPhone Safari’ye birebir Apple genişliği */
+  padding: 40px 20px;
+}
+
+/* Başlık */
+.page-container h1 {
+  font-size: 40px;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+/* Alt metin */
+.page-container p {
+  font-size: 18px;
+  color: #555;
+  margin-top: 0;
+}
+
+/* Prompt kutusu */
+.prompt-box {
+  margin-top: 30px;
+  background: #ffffff;
+  border-radius: 14px;
+  padding: 20px;
+  border: 1px solid #e8e8e8;
+}
+
+.prompt-box textarea {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 18px;
+  resize: none;
+  background: transparent;
+}
+
+/* AI seçim butonları */
+.button-row {
+  margin-top: 16px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.ai-button {
+  background: #f1f1f3;
+  border-radius: 12px;
+  padding: 7px 16px;
+  border: none;
+  font-size: 15px;
+}
+
+/* Footer */
+.footer {
+  margin-top: 30px;
+  color: #666;
+  font-size: 14px;
+}
