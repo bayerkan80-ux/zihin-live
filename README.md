@@ -22,20 +22,21 @@ Sadece **düşüncenin akışı**.
 ---
 
 ## 🚀 MVP Features  
-- Real-time text stream  
-- Private AI livestream  
-- Clean, minimal UI  
-- API-based AI chat
+- Real-time text streaming  
+- Private AI livestream sessions  
+- Minimal, distraction-free interface  
+- API-based AI conversation support
 
 ---
 
 ## 🧭 Roadmap  
-- Public streams  
-- Multi-model support  
-- Viewer system  
+- Public livestreams  
+- Viewer system + live audience  
 - Creator profiles  
-- Thinking analytics  
-- Saved “episodes”
+- Multi-model AI support  
+- Thought analytics  
+- Saved “episodes”  
+- Monetization for creators
 
 ---
 
@@ -47,5 +48,8 @@ Sadece **düşüncenin akışı**.
 
 ---
 
-## 📄 License  
-MIT License – free to build, fork, improve.
+## 📄 License (All Rights Reserved)
+**Copyright © Erkan Bayar – All rights reserved.**
+
+This project, its concept, name, design, and overall architecture are the intellectual property of **Erkan Bayar**.  
+No part of this repository may be copied, reproduced, modified, published, or used for commercial purposes without explicit written permission from the owner.
