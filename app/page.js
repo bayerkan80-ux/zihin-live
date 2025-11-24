@@ -1,38 +1,32 @@
 "use client";
-import { useState } from 'react';
+
+import { useState } from "react";
 
 export default function Home() {
-  const [message, setMessage] = useState('');
-  const [ai, setAi] = useState('grok');
-  const [visibility, setVisibility] = useState('link-only');
+  const [message, setMessage] = useState("");
+  const [ai, setAi] = useState("grok");
+  const [visibility, setVisibility] = useState("link-only");
 
   const sendMessage = async () => {
-    // Buraya AI API çağrısı gelecek
-    console.log('Mesaj gönderiliyor:', message, ai, visibility);
+    if (!message.trim()) {
+      alert("Lütfen bir mesaj yaz!");
+      return;
+    }
+
+    // Yayın linkini oluştur (şimdilik sabit, yarın dinamik olacak)
+    const broadcastLink = `https://zihin-live.vercel.app/watch/${Math.random().toString(36).substring(7)}`;
+
+    alert(
+      `YAYIN BAŞLADI! \n\n` +
+      `Seçtiğin AI: ${ai.toUpperCase()}\n` +
+      `Yayın tipi: ${visibility === "public" ? "Herkese Açık" : visibility === "link-only" ? "Sadece Link Olanlar" : "Özel"}\n\n` +
+      `İzleyiciler seni şu linkten izleyebilir:\n${broadcastLink}\n\n` +
+      `(Yarın gerçek AI konuşması ve izleyici ekranı eklenecek!)`
+    );
+
+    // Konsola da yazalım (geliştirici için)
+    console.log("Yeni yayın:", { message, ai, visibility, broadcastLink });
   };
 
   return (
-    <div style={{ padding: '20px' }}>
-      <h1>Zihin.Live - AI Konuşmanı Canlı Yayınla</h1>
-      <select value={ai} onChange={(e) => setAi(e.target.value)}>
-        <option value="grok">Grok</option>
-        <option value="claude">Claude</option>
-        <option value="gemini">Gemini</option>
-      </select>
-      <br />
-      <input 
-        type="text" 
-        value={message} 
-        onChange={(e) => setMessage(e.target.value)} 
-        placeholder="AI'ye sor..." 
-      />
-      <button onClick={sendMessage}>Gönder & Yayınla</button>
-      <br />
-      <select value={visibility} onChange={(e) => setVisibility(e.target.value)}>
-        <option value="public">Herkese Açık</option>
-        <option value="link-only">Sadece Link Olanlar</option>
-        <option value="private">Özel (Davetli)</option>
-      </select>
-    </div>
-  );
-}
+    <div style={{ padding: "30px", fontFamily: "Arial, sans-serif", maxWidth: "600px", margin:
