@@ -1,37 +1,76 @@
-/* layout.css */
+/* Vercel UI – Modern Minimal Layout */
 
-/* Sayfanın ortalanması */
+/* Sayfayı ortaya al */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: -apple-system, BlinkMacSystemFont, Inter, Arial, sans-serif;
+    background: #fafafa;
+    color: #111;
+}
+
+/* Ana kapsayıcı */
 .main-container {
-  max-width: 800px;
-  margin: 0 auto;
-  padding: 32px;
-  font-family: Arial, sans-serif;
+    max-width: 640px;
+    margin: 0 auto;
+    padding: 40px 24px;
 }
 
-/* Sol panel (prompt alanı) */
-.prompt-box {
-  background: #f2f2f2;
-  padding: 20px;
-  border-radius: 10px;
-  margin-bottom: 20px;
+/* Başlık */
+h1 {
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 8px;
 }
 
-/* Sağ panel (AI cevabı) */
-.response-box {
-  background: #ffffff;
-  padding: 20px;
-  border-radius: 10px;
-  border: 1px solid #ddd;
-  margin-bottom: 20px;
+/* Alt başlık */
+.subtitle {
+    font-size: 18px;
+    color: #555;
+    margin-bottom: 32px;
 }
 
-/* Input alanı */
+/* Input kartı */
+.textarea-wrapper {
+    background: #fff;
+    border-radius: 14px;
+    padding: 24px;
+    box-shadow: 0 0 0 1px #e5e5e5;
+    margin-bottom: 28px;
+}
+
+/* Textarea */
 textarea {
-  width: 100%;
-  min-height: 120px;
-  padding: 14px;
-  border-radius: 8px;
-  border: 1px solid #ccc;
-  resize: vertical;
-  font-size: 16px;
+    width: 100%;
+    height: 130px;
+    border: none;
+    outline: none;
+    resize: none;
+    font-size: 18px;
+    font-family: inherit;
+    color: #333;
+}
+
+/* Butonlar */
+.button-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 40px;
+}
+
+.btn {
+    padding: 8px 16px;
+    border-radius: 999px;
+    background: #f2f2f2;
+    color: #333;
+    font-size: 14px;
+    border: 1px solid #e1e1e1;
+}
+
+/* Footer */
+.footer {
+    font-size: 15px;
+    color: #444;
+    margin-top: 20px;
 }
