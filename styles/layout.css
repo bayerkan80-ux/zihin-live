@@ -1,0 +1,37 @@
+/* layout.css */
+
+/* Sayfanın ortalanması */
+.main-container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 32px;
+  font-family: Arial, sans-serif;
+}
+
+/* Sol panel (prompt alanı) */
+.prompt-box {
+  background: #f2f2f2;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+
+/* Sağ panel (AI cevabı) */
+.response-box {
+  background: #ffffff;
+  padding: 20px;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  margin-bottom: 20px;
+}
+
+/* Input alanı */
+textarea {
+  width: 100%;
+  min-height: 120px;
+  padding: 14px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  resize: vertical;
+  font-size: 16px;
+}
