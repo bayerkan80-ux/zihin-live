@@ -1,3 +1,5 @@
+import "../styles/global.css";
+
 export const metadata = {
   title: "Zihin.Live",
   description: "AI ile konuşmanı canlı yayınla.",
