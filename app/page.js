@@ -3,10 +3,11 @@ import "../styles/layout.css";
 export default function Home() {
   return (
     <div className="main-container">
+
       <h1>Zihin.Live</h1>
       <p>AI ile konuşmanı canlı yayınla.</p>
 
-      {/* Prompt alanı */}
+      {/* PROMPT */}
       <div className="prompt-box">
         <textarea
           placeholder="Buraya yaz, bütün dünya izlesin..."
@@ -14,21 +15,30 @@ export default function Home() {
         ></textarea>
       </div>
 
-      {/* AI model butonları */}
-      <div className="button-row">
-        <button className="ai-button">Grok</button>
-        <button className="ai-button">Claude</button>
-        <button className="ai-button">Gemini</button>
+      {/* AI MODEL SEÇİMİ (Dropdown) */}
+      <div className="dropdown-container">
+        <label>Yapay Zekâ Modeli</label>
+        <select className="dropdown">
+          <option>Grok</option>
+          <option>Claude</option>
+          <option>Gemini</option>
+        </select>
       </div>
 
-      {/* Yayın kontrol */}
-      <div className="button-row">
-        <button className="ctrl-button">Yayınla</button>
-        <button className="ctrl-button">Link ile</button>
-        <button className="ctrl-button">Davetli</button>
+      {/* YAYIN MODU (Dropdown) */}
+      <div className="dropdown-container">
+        <label>Yayın Modu</label>
+        <select className="dropdown">
+          <option>Kamuya Açık</option>
+          <option>Link ile</option>
+          <option>Davetli</option>
+        </select>
       </div>
 
-      {/* Footer */}
+      {/* BÜYÜK CTA */}
+      <button className="big-start-button">Yayına Geç</button>
+
+      {/* FOOTER */}
       <p className="footer">v1 · 24 Kasım 2025 · Türkiye</p>
     </div>
   );
