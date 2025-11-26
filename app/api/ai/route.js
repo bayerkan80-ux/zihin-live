@@ -1,21 +1,36 @@
-import OpenAI from "openai";
+import { NextResponse } from "next/server";
 
 export async function POST(req) {
-  const { message } = await req.json();
+  try {
+    const { messages, model } = await req.json();
 
-  const client = new OpenAI({
-    apiKey: process.env.OPENAI_API_KEY
-  });
+    const apiKey = process.env.OPENAI_API_KEY;
+    if (!apiKey) {
+      return NextResponse.json(
+        { ok: false, error: "API key not found in environment." },
+        { status: 500 }
+      );
+    }
 
-  const completion = await client.chat.completions.create({
-    model: "gpt-4o-mini",
-    messages: [
-      { role: "system", content: "You are Zihin.Live AI." },
-      { role: "user", content: message }
-    ]
-  });
+    const response = await fetch("https://api.openai.com/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${apiKey}`,
+      },
+      body: JSON.stringify({
+        model: model || "gpt-4o-mini",
+        messages,
+      }),
+    });
 
-  return Response.json({
-    reply: completion.choices[0].message.content
-  });
+    const data = await response.json();
+
+    return NextResponse.json({ ok: true, data });
+  } catch (error) {
+    return NextResponse.json(
+      { ok: false, error: error.message },
+      { status: 500 }
+    );
+  }
 }
